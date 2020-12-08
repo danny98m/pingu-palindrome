@@ -23,10 +23,13 @@ const image = document.querySelector('img');
 
 inputField.addEventListener('keyup', (event)=> {
   // remove whitespace
-  inputTextStripped = event.target.value.replace(/\s+/g, '');
+  const inputTextStripped = event.target.value.replace(/\s+/g, '');
+
+  // make lower case
+  const cleanedInput = inputTextStripped.toLowerCase();
   
   // check if palindrome
-  state.isPalindrome = checkPalindrome(inputTextStripped);
+  state.isPalindrome = checkPalindrome(cleanedInput);
 
   // if there is nothing in the input field
   if (inputTextStripped === '') {
